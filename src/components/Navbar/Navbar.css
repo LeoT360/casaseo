@@ -1,0 +1,192 @@
+/* Wrapper sticky de la navegación */
+.navbar-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+/* Deja espacio para la navegación al saltar a una sección */
+#nosotros,
+#servicios,
+#beneficios,
+#contacto,
+#opiniones,
+#faq,
+#inicio {
+  scroll-margin-top: var(--navbar-height, 80px);
+}
+
+/* 1. Top Bar: Elemento normal dentro del flujo de la página */
+.top-bar {
+  background-color: #1A202C;
+  color: #E2E8F0;
+  font-size: 0.8rem;
+  padding: 0.4rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  white-space: nowrap;
+}
+
+.top-bar span {
+  display: inline-block;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.topbar-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* 2. Navbar Principal: Se fija arriba al tocar el borde de la pantalla */
+.navbar {
+  background-color: var(--bg-white);
+  border-bottom: 1px solid var(--border-color);
+  padding: 1rem 0;
+  transition: box-shadow 0.2s ease;
+}
+
+/* Cuando el navbar se pega arriba, agregamos la sombra */
+.navbar.scrolled {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Distribución en 3 columnas: Logo - Links Centrados - Botón */
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  height: 50px;
+  display: block;
+}
+
+/* Links Centrados */
+.navbar-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navbar-nav a {
+  font-weight: 500;
+  color: var(--text-color);
+  transition: color 0.2s ease;
+  position: relative;
+}
+
+.navbar-nav a:not(.btn-nav-contact):hover {
+  color: var(--primary);
+}
+
+/* Línea indicadora en hover */
+.navbar-nav a:not(.btn-nav-contact)::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--primary);
+  transition: width 0.25s ease;
+}
+
+.navbar-nav a:not(.btn-nav-contact):hover::after {
+  width: 100%;
+}
+
+/* Botón de Cotización */
+.btn-nav-contact {
+  background-color: var(--primary);
+  color: white !important;
+  padding: 0.65rem 1.3rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  transition: background-color 0.2s ease;
+  display: inline-block;
+}
+
+.btn-nav-contact:hover {
+  background-color: var(--primary-dark);
+}
+
+.mobile-only {
+  display: none;
+}
+
+/* Menú Hamburguesa */
+.menu-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.4rem;
+}
+
+.menu-icon {
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .top-bar {
+    display: none;
+  }
+
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+
+  .mobile-only {
+    display: block;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .navbar-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--bg-white);
+    flex-direction: column;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-md);
+    border-bottom: 1px solid var(--border-color);
+    display: none;
+    gap: 1.2rem;
+  }
+
+  .navbar-nav.active {
+    display: flex;
+  }
+}
