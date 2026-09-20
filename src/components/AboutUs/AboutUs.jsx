@@ -1,12 +1,13 @@
 import React from 'react';
 import './AboutUs.css';
+import casaseoLogo from '../../assets/casaseo_logo.svg';
 
 export const AboutUs = () => {
   return (
     <section id="nosotros" className="about-section">
       <div className="about-container">
         <div className="about-image-wrapper">
-          <img src="/src/assets/casaseo_logo.svg" alt="Casaseo Corporativo" className="about-logo" />
+          <img src={casaseoLogo} alt="Casaseo Corporativo" className="about-logo" />
         </div>
         <div className="about-content">
           <span className="section-subtitle">Sobre Nosotros</span>

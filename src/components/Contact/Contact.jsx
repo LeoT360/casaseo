@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import './Contact.css';
+import footerIconPhone from '../../assets/footer_icon_2.svg';
+import footerIconEmail from '../../assets/footer_icon_3.svg';
+import footerIconSchedule from '../../assets/footer_icon_4.svg';
+import whatsappIcon from '../../assets/whatsapp_icon.svg';
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
@@ -59,7 +63,7 @@ export const Contact = () => {
               {/* Ítem 1: Teléfono */}
               <div className="contact-detail-item">
                 <div className="detail-icon-wrapper">
-                  <img src="/src/assets/footer_icon_2.svg" alt="Teléfono" className="detail-icon" />
+                  <img src={footerIconPhone} alt="Teléfono" className="detail-icon" />
                 </div>
                 <div className="detail-content">
                   <strong>Número</strong>
@@ -70,7 +74,7 @@ export const Contact = () => {
               {/* Ítem 2: Correo */}
               <div className="contact-detail-item">
                 <div className="detail-icon-wrapper">
-                  <img src="/src/assets/footer_icon_3.svg" alt="Correo" className="detail-icon" />
+                  <img src={footerIconEmail} alt="Correo" className="detail-icon" />
                 </div>
                 <div className="detail-content">
                   <strong>Correo</strong>
@@ -81,7 +85,7 @@ export const Contact = () => {
               {/* Ítem 3: Horario */}
               <div className="contact-detail-item">
                 <div className="detail-icon-wrapper">
-                  <img src="/src/assets/footer_icon_4.svg" alt="Horario" className="detail-icon" />
+                  <img src={footerIconSchedule} alt="Horario" className="detail-icon" />
                 </div>
                 <div className="detail-content">
                   <strong>Horario de Atención</strong>
@@ -174,7 +178,7 @@ export const Contact = () => {
         aria-label="Contactar por WhatsApp"
         title="¿Tienes preguntas? Escríbenos por WhatsApp"
       >
-        <img src="/src/assets/whatsapp_icon.svg" alt="WhatsApp Icon" className="whatsapp-icon" />
+        <img src={whatsappIcon} alt="WhatsApp Icon" className="whatsapp-icon" />
       </a>
     </>
   );

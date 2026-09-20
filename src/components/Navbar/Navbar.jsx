@@ -1,5 +1,10 @@
 import React, { useRef, useState, useEffect } from 'react';
 import './Navbar.css';
+import topbarIcon1 from '../../assets/topbar_icon_1.svg';
+import topbarIcon2 from '../../assets/topbar_icon_2.svg';
+import topbarIcon3 from '../../assets/topbar_icon_3.svg';
+import casaseoTitle from '../../assets/casaseo_title.svg';
+import menuIcon from '../../assets/menu_icon.svg';
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -42,11 +47,11 @@ export const Navbar = () => {
     <>
       {/* Banda Superior: Elemento normal que sube con el scroll */}
       <div className="top-bar">
-        <img src="/src/assets/topbar_icon_1.svg" alt="Topbar Icon" className="topbar-icon" />
+        <img src={topbarIcon1} alt="Topbar Icon" className="topbar-icon" />
         <span>AMABILIDAD</span>
-        <img src="/src/assets/topbar_icon_2.svg" alt="Topbar Icon" className="topbar-icon" />
+        <img src={topbarIcon2} alt="Topbar Icon" className="topbar-icon" />
         <span>PULCRITUD</span>
-        <img src="/src/assets/topbar_icon_3.svg" alt="Topbar Icon" className="topbar-icon" />
+        <img src={topbarIcon3} alt="Topbar Icon" className="topbar-icon" />
         <span>BUENOS PRECIOS</span>
       </div>
 
@@ -56,7 +61,7 @@ export const Navbar = () => {
           <div className="navbar-container">
           {/* Izquierda: Logo */}
           <a href="#inicio" className="navbar-brand">
-            <img src="/src/assets/casaseo_title.svg" alt="Casaseo Title" className="navbar-logo" />
+            <img src={casaseoTitle} alt="Casaseo Title" className="navbar-logo" />
           </a>
 
           {/* Botón menú hamburguesa (Móvil) */}
@@ -66,7 +71,7 @@ export const Navbar = () => {
             aria-label={isMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
             aria-expanded={isMenuOpen}
           >
-            <img src="/src/assets/menu_icon.svg" alt="" className="menu-icon" />
+            <img src={menuIcon} alt="" className="menu-icon" />
           </button>
 
           {/* Centro: Links de Navegación */}

@@ -1,12 +1,15 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import './Hero.css';
+import heroGraphic1 from '../../assets/hero_graphic_1.jpg';
+import heroGraphic2 from '../../assets/hero_graphic_2.jpg';
+import heroGraphic3 from '../../assets/hero_graphic_3.jpg';
 
 export const Hero = () => {
   // Arreglo con tus imágenes del carrusel
   const carouselImages = [
-    { src: '/src/assets/hero_graphic_1.jpg', alt: 'Aseo de zonas comunes' },
-    { src: '/src/assets/hero_graphic_2.jpg', alt: 'Mantenimiento de áreas sociales' },
-    { src: '/src/assets/hero_graphic_3.jpg', alt: 'Limpieza profesional para copropiedades' }
+    { src: heroGraphic1, alt: 'Aseo de zonas comunes' },
+    { src: heroGraphic2, alt: 'Mantenimiento de áreas sociales' },
+    { src: heroGraphic3, alt: 'Limpieza profesional para copropiedades' }
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
